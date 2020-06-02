@@ -14,6 +14,9 @@ export class EmployeeListComponent implements OnInit {
   employeeAge: number;
   employeeSalary: number;
   loading = false;
+  errorAlert = false;
+  successAlert = false;
+  disableButton = false;
   errMsg: string;
   constructor(
     private employeeService: EmployeeService
@@ -59,12 +62,21 @@ export class EmployeeListComponent implements OnInit {
       age: this.employeeAge
     };
 
+    this.disableButton = true;
     this.employeeService.updateEmployee(params, id)
       .subscribe((res) => {
         this.getEmployeeList();
-        console.log(res);
+        this.successAlert = true;
+        this.disableButton = false;
+        const clearTimeout = setTimeout(() => {
+          this.successAlert = false;
+        }, 2000);
       }, (err) => {
-
+        this.disableButton = false;
+        this.errorAlert = true;
+        const clearTimeout = setTimeout(() => {
+          this.errorAlert = false;
+        }, 2000);
       });
 
   }
@@ -72,9 +84,16 @@ export class EmployeeListComponent implements OnInit {
   deleteEmployee(id) {
     this.employeeService.deleteEmployee(id)
       .subscribe((res) => {
-
+        this.successAlert = true;
+        this.disableButton = false;
+        const clearTimeout = setTimeout(() => {
+          this.successAlert = false;
+        }, 2000);
       }, () => {
-
+        this.errorAlert = true;
+        const clearTimeout = setTimeout(() => {
+          this.errorAlert = false;
+        }, 2000);
       });
   }
 }

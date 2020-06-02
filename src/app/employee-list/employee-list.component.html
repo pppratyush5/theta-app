@@ -1,4 +1,12 @@
 <!-- table start -->
+
+<div *ngIf="successAlert" class="w-25 m-3 alert alert-success" role="alert">
+  Success
+</div>
+
+<div *ngIf="errorAlert" class="w-25 m-3 alert alert-danger" role="alert">
+  Something went Wrong
+</div>
 <div class="container-fluid text-center scroll">
   <h3 class="text-left">
     Employee List
@@ -51,7 +59,8 @@
             </div>
 
             <div class="col-md-3 mb-3">
-              <button class="btn btn-primary" (click)="validate(e?.id)">Update Employee</button>
+              <button class="btn btn-primary" [disabled]='disableButton' (click)="validate(e?.id)">Update
+                Employee</button>
             </div>
 
             <small class="text-danger my-2">{{errMsg}}</small>

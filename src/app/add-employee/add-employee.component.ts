@@ -11,6 +11,11 @@ export class AddEmployeeComponent implements OnInit {
   employeeAge: number;
   employeeSalary: number;
   errMsg = '';
+  loading = false;
+  disableButton = false;
+  errorAlert = false;
+  successAlert = false;
+
   constructor(private employeeService: EmployeeService
   ) { }
 
@@ -18,12 +23,21 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   addNewEmployee(params) {
+    this.disableButton = true;
     this.employeeService.addEmployee(params)
       .subscribe((res) => {
-        console.log('res>>', res);
+        this.disableButton = false;
+        this.successAlert = true;
+        const clearTimeout = setTimeout(() => {
+          this.successAlert = false;
+        }, 2000);
+      }, () => {
+        this.disableButton = false;
+        this.errorAlert = true;
+        const clearTimeout = setTimeout(() => {
+          this.errorAlert = false;
+        }, 2000);
       });
-
-    alert(`${this.employeeName}, ${this.employeeSalary}, ${this.employeeAge}`);
   }
 
   validate() {

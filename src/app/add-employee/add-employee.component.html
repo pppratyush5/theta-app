@@ -21,9 +21,14 @@
     </div>
     <small class="text-danger my-2">{{errMsg}}</small>
   </div>
-  <button class="btn btn-primary" (click)=" validate()">Add New Employee</button>
+  <button class="btn btn-primary" [disabled]='disableButton' (click)=" validate()">Add New Employee</button>
 
 </div>
-<div class="alert alert-success" role="alert">
-  This is a success alert—check it out!
+
+<div *ngIf="successAlert" class="w-25 m-3 alert alert-success" role="alert">
+  Successfully Created
+</div>
+
+<div *ngIf="errorAlert" class="w-25 m-3 alert alert-danger" role="alert">
+  Something went Wrong
 </div>
