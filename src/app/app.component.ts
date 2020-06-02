@@ -14,7 +14,7 @@ export class AppComponent {
   }
 
   menuItem(item: string) {
-    console.log('item', item);
     this.menuSelected = item;
   }
+
 }

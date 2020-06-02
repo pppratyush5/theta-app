@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-// import { EventEmitter } from 'protractor';
 import { EventEmitter } from '@angular/core';
 
 @Component({
@@ -8,7 +7,6 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./side-menu.component.scss']
 })
 export class SideMenuComponent implements OnInit {
-  // @Input() item: string;
   @Output() optionSelected = new EventEmitter();
 
   ngOnInit() { }

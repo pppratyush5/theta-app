@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -8,12 +8,16 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 export class CardComponent implements OnInit {
 
-  faCoffee = faCoffee;
+  @Output() cardSelected = new EventEmitter();
 
   constructor() {
   }
 
   ngOnInit(): void {
+  }
+
+  onCardSelect(option) {
+    this.cardSelected.emit(option);
   }
 
 }
