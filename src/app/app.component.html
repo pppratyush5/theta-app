@@ -1,26 +1,32 @@
 <div class="d-flex vh-100">
-  <!-- Sidebar -->
   <app-side-menu class="background-primary-blue" (optionSelected)="menuItem($event)">
   </app-side-menu>
-  <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column flex-grow-1">
-    <!-- Main Content -->
     <div id="content">
+
+      <!-- top nav start -->
       <app-top-bar></app-top-bar>
-      <!-- Begin Page Content -->
+      <!-- top nav ends -->
+
       <div class="container-fluid">
-        <!-- Page Heading -->
+
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
           <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
         </div>
+
+        <!-- app card start -->
         <app-card (cardSelected)="menuItem($event)"></app-card>
+        <!-- app card ends -->
 
-        <app-employee-list *ngIf="menuSelected === 'employeeList'"></app-employee-list>
+        <!-- employee list starts -->
+        <app-employee-list *ngIf="menuSelected === 'Employee List'"></app-employee-list>
+        <!-- employee list ends -->
 
-        <app-add-employee *ngIf="menuSelected === 'addEmployee'"></app-add-employee>
+        <!-- add employee starts  -->
+        <app-add-employee *ngIf="menuSelected === 'Add Employee'"></app-add-employee>
+        <!-- add employee ends  -->
+
       </div>
     </div>
-    <!-- End of Main Content -->
   </div>
-  <!-- End of Content Wrapper -->
 </div>

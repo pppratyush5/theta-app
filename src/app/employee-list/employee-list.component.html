@@ -1,5 +1,4 @@
-<!-- table start -->
-
+<!-- alert ends -->
 <div *ngIf="successAlert" class="w-25 m-3 alert alert-success" role="alert">
   Success
 </div>
@@ -7,6 +6,7 @@
 <div *ngIf="errorAlert" class="w-25 m-3 alert alert-danger" role="alert">
   Something went Wrong
 </div>
+<!-- alerts ends -->
 <div class="container-fluid text-center scroll">
   <h3 class="text-left">
     Employee List
@@ -38,9 +38,9 @@
         <td>
           <img (click)="deleteEmployee(e?.id)" src="./assets/delete.svg" alt="">
         </td>
-        <!--  -->
       </tr>
 
+      <!--  update employee -->
       <tr *ngIf="e.id === employeeId">
         <td colspan="5">
           <div class="form-row">
@@ -67,6 +67,7 @@
           </div>
         </td>
       </tr>
+      <!--  -->
     </tbody>
   </table>
 </div>
