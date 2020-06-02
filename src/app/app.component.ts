@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'theta';
+  menuSelected = '';
+
+  constructor() {
+
+  }
+
+  menuItem(item: string) {
+    console.log('item', item);
+    this.menuSelected = item;
+  }
 }

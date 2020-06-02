@@ -1,0 +1,29 @@
+<div class="container-fluid">
+
+  <h4>Add New Employee</h4>
+
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom01">Employee Name</label>
+      <input type="text" class="form-control" [(ngModel)]="employeeName" [ngModelOptions]="{standalone: true}"
+        placeholder=" Employee Name" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Employee Salary</label>
+      <input type="number" class="form-control" [(ngModel)]="employeeSalary" [ngModelOptions]="{standalone: true}"
+        placeholder=" Employee Salary" required>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Age</label>
+      <input type="number" class="form-control" [(ngModel)]="employeeAge" [ngModelOptions]="{standalone: true}"
+        placeholder=" Employee Age" required>
+    </div>
+    <small class="text-danger my-2">{{errMsg}}</small>
+  </div>
+  <button class="btn btn-primary" (click)=" validate()">Add New Employee</button>
+
+</div>
+<div class="alert alert-success" role="alert">
+  This is a success alert—check it out!
+</div>

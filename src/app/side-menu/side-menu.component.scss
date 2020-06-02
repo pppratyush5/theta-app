@@ -1,0 +1,94 @@
+.sidebar #sidebarToggle::after {
+  font-weight: 900;
+  content: '\f104';
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 0.1rem;
+}
+
+
+.sidebar .sidebar-brand {
+  height: 4.375rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  z-index: 1;
+}
+
+
+.sidebar hr.sidebar-divider {
+  margin: 0 1rem 1rem;
+}
+
+.sidebar .sidebar-heading {
+  text-align: center;
+  padding: 0 1rem;
+  font-weight: 800;
+  font-size: 0.65rem;
+  color: white;
+}
+
+@media (min-width: 768px) {
+
+  .sidebar .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    width: 14rem;
+  }
+
+  .sidebar .nav-item .nav-link i {
+    font-size: 0.85rem;
+    margin-right: 0.25rem;
+  }
+
+  .sidebar .nav-item .nav-link span {
+    font-size: 0.85rem;
+    display: inline;
+  }
+
+  .sidebar .nav-item .nav-link[data-toggle="collapse"]::after {
+    width: 1rem;
+    text-align: center;
+    float: right;
+    vertical-align: 0;
+    border: 0;
+    font-weight: 900;
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+  }
+
+  .sidebar .nav-item .nav-link[data-toggle="collapse"].collapsed::after {
+    content: '\f105';
+  }
+
+  .sidebar .sidebar-brand .sidebar-brand-icon i {
+    font-size: 2rem;
+  }
+}
+
+.w-16em {
+  width: 16em;
+}
+
+
+
+a {
+  color: white;
+}
+
+.sidebar-divider {
+  border-top: 1px solid #eaecf4;
+}
+
+.sidebar #sidebarToggle {
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
